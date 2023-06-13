@@ -141,7 +141,7 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example2" class="table table-bordered table-hover">
+                <table id="example2" class="table table-bordered table-hover" style="text-align: center;">
                   <thead>
                   <tr>
                     <th>No</th>
@@ -168,7 +168,7 @@
                             <td>{{ $pengembalian->denda }}</td>
                             <td>
                               <form action="{{route('pengembalian.destroy', ['pengembalian' => $pengembalian->id_pengembalian])}}" method="POST">
-                                <a href="{{ route('pengembalian.edit', $pengembalian->id_pengembalian) }}" class="btn btn-md btn-success">EDIT</a>
+                                <a href="{{ route('pengembalian.edit', $pengembalian->id_pengembalian) }}" class="btn btn-md btn-warning">EDIT</a>
                                 @method("delete")
                                 @csrf
                                 <button type="submit" class="btn btn-md btn-danger">HAPUS</button>

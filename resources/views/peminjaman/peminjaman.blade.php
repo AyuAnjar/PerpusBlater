@@ -141,7 +141,7 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example2" class="table table-bordered table-hover">
+                <table id="example2" class="table table-bordered table-hover" style="text-align: center;">
                   <thead>
                   <tr>
                     <th>No</th>
@@ -169,7 +169,7 @@
                             <td>
                               {{-- <button type="button" class="btn btn-md btn-success" onclick="window.location='{{ route('peminjaman.edit', $peminjaman->id_peminjaman) }}'">EDIT</button> --}}
                               <form action="{{route('peminjaman.destroy', ['peminjaman' => $peminjaman->id_peminjaman])}}" method="POST">
-                                <a href="{{ route('peminjaman.edit', $peminjaman->id_peminjaman) }}" class="btn btn-md btn-success">EDIT</a>
+                                <a href="{{ route('peminjaman.edit', $peminjaman->id_peminjaman) }}" class="btn btn-md btn-warning">EDIT</a>
                                 @method("delete")
                                 @csrf
                                 <button type="submit" class="btn btn-md btn-danger">HAPUS</button>

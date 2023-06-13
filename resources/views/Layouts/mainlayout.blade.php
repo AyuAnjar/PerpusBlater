@@ -46,15 +46,17 @@ https://templatemo.com/tm-581-kind-heart-charity
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link click-scroll" href="/">Home</a>
+                        <a class="nav-link active" href="/">Home</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link click-scroll" href="">Koleksi Buku</a>
+                        <a class="nav-link active" href="/login">Koleksi Buku</a> 
+                        <!-- Link belum bener -->
                     </li>
 
                     <li class="nav-item ms-3">
-                        <a class="nav-link custom-btn custom-border-btn btn" href="">Login</a>
+                        <a class="nav-link custom-btn custom-border-btn btn" href="/login">Login</a>
+                        <!-- Link belum bener -->
                     </li>
                 </ul>
             </div>
