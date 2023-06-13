@@ -161,8 +161,7 @@
                         <tr>
                             <th>{{ $loop->iteration }}</th>
                             <td>{{ $buku->id_buku }}</td>
-                            <td>{{ count($bukus) }}</td>
-                            {{-- <td>{{ $buku->judul }}</td> --}}
+                            <td>{{ $buku->judul }}</td>
                             <td>{{ $buku->pengarang }}</td>
                             <td>{{ $buku->penerbit }}</td>
                             <td>{{ $buku->thn_terbit }}</td>

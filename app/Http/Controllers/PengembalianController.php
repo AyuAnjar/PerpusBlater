@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 //import Model "Peminjaman"
 use App\Models\Pengembalian;
+use App\Models\Anggota;
+use App\Models\Buku;
 
 //return type View
 use Illuminate\View\View;
@@ -22,7 +24,7 @@ class PengembalianController extends Controller
     public function index(): View
     {
         //get Pengembalians
-        $pengembalians = Pengembalian::latest()->paginate(5);
+        $pengembalians = Pengembalian::with('bukus','anggotas')->latest()->paginate(5);
 
         //render view with Pengembalians
         return view('pengembalian.pengembalian', compact('pengembalians'));
@@ -49,7 +51,6 @@ class PengembalianController extends Controller
         //validate form
         $this->validate($request, [
             'id_pengembalian'     => 'required|min:3',
-            'judul'   => 'required',
             'id_anggota'   => 'required',
             'id_buku'   => 'required',
             'tgl_jatuh_tempo'   => 'required',
@@ -61,7 +62,6 @@ class PengembalianController extends Controller
         //create post
         Pengembalian::create([
             'id_pengembalian' => $request->id_pengembalian,
-            'judul'   => $request->judul,
             'id_anggota'   => $request->id_anggota,
             'id_buku'   => $request->id_buku,
             'tgl_jatuh_tempo'   => $request->tgl_jatuh_tempo,
@@ -105,7 +105,6 @@ class PengembalianController extends Controller
         //update
         $pengembalian->update([
             'id_pengembalian' => $request->id_pengembalian,
-            'judul'   => $request->judul,
             'id_anggota'   => $request->id_anggota,
             'id_buku'   => $request->id_buku,
             'tgl_jatuh_tempo'   => $request->tgl_jatuh_tempo,

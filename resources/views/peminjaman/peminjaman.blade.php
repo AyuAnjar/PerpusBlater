@@ -146,9 +146,10 @@
                   <tr>
                     <th>No</th>
                     <th>ID Peminjaman</th>
-                    <th>Judul</th>
                     <th>ID Anggota</th>
+                    <th>Nama Anggota</th>
                     <th>ID Buku</th>
+                    <th>Judul</th>
                     <th>Tanggal Peminjaman</th>
                     <th>Tanggal Jatuh Tempo</th>
                     <th>Aksi</th>
@@ -158,10 +159,11 @@
                     @foreach ($peminjamans as $peminjaman)
                         <tr>
                             <th>{{ $loop->iteration }}</th>
-                            <td>{{ $peminjaman->id_peminjaman }}</td>
-                            <td>{{ $peminjaman->judul }}</td>
+                            <td>{{ $peminjaman->id_peminjaman }}</td>        
                             <td>{{ $peminjaman->id_anggota }}</td>
+                            <td>{{ $peminjaman->anggotas->nama }}</td>
                             <td>{{ $peminjaman->id_buku }}</td>
+                            <td>{{ $peminjaman->bukus->judul }}</td>
                             <td>{{ $peminjaman->tgl_pinjam }}</td>
                             <td>{{ $peminjaman->tgl_jatuh_tempo }}</td>
                             <td>

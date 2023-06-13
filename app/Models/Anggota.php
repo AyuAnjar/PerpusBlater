@@ -13,4 +13,14 @@ class Anggota extends Model
     protected $primaryKey = 'id_anggota';
     public $incrementing = false;
     public $timestamp = true;
+
+    public function peminjaman()
+    {
+        return $this->hasMany(Peminjaman::class);
+    }
+
+    public function pengembalian()
+    {
+        return $this->hasMany(Pengembalian::class);
+    }
 }

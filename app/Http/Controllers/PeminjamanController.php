@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 //import Model "Peminjaman"
 use App\Models\Peminjaman;
+use App\Models\Anggota;
+use App\Models\Buku;
 
 //return type View
 use Illuminate\View\View;
@@ -49,7 +51,6 @@ class PeminjamanController extends Controller
         //validate form
         $this->validate($request, [
             'id_peminjaman'     => 'required|min:3',
-            'judul' => 'required',
             'id_anggota'   => 'required|min:3',
             'id_buku'   => 'required|min:3',
             'tgl_pinjam'   => 'required',
@@ -59,7 +60,6 @@ class PeminjamanController extends Controller
         //create post
         Peminjaman::create([
             'id_peminjaman' => $request->id_peminjaman,
-            'judul' => $request->judul,
             'id_anggota'   => $request->id_anggota,
             'id_buku'   => $request->id_buku,
             'tgl_pinjam'   => $request->tgl_pinjam,
@@ -101,7 +101,6 @@ class PeminjamanController extends Controller
         //update
         $peminjaman->update([
             'id_peminjaman' => $request->id_peminjaman,
-            'judul'   => $request->judul,
             'id_anggota'   => $request->id_anggota,
             'id_buku'   => $request->id_buku,
             'tgl_pinjam'   => $request->tgl_pinjam,

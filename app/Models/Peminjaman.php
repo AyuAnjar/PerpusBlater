@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Peminjaman extends Model
 {
     use HasFactory;
-    protected $fillable = ['id_peminjaman','judul','id_anggota','id_buku','tgl_pinjam','tgl_jatuh_tempo'];
+    protected $fillable = ['id_peminjaman','id_anggota','id_buku','tgl_pinjam','tgl_jatuh_tempo'];
     protected $table = 'peminjamans';
     protected $primaryKey = 'id_peminjaman';
     public $incrementing = false;
@@ -16,11 +16,11 @@ class Peminjaman extends Model
 
     public function bukus()
     {
-        return $this->belongsTo(Buku::class);
+        return $this->belongsTo(Buku::class, 'id_buku');
     }
 
     public function anggotas()
     {
-        return $this->belongsTo(Anggota::class);
+        return $this->belongsTo(Anggota::class, 'id_anggota');
     }
 }

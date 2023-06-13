@@ -146,14 +146,15 @@
                   <tr>
                     <th>No</th>
                     <th>ID Pengembalian</th>
-                    <th>Judul</th>
                     <th>ID Anggota</th>
+                    <th>Nama Anggota</th>
                     <th>ID Buku</th>
+                    <th>Judul</th>
                     <th>Tanggal Jatuh Tempo</th>
                     <th>Tanggal Kembali</th>
                     <th>Terlambat</th>
                     <th>Denda</th>
-                    <th>Aksi</th>
+                    <th width="160px">Aksi</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -161,9 +162,10 @@
                         <tr>
                             <th>{{ $loop->iteration }}</th>
                             <td>{{ $pengembalian->id_pengembalian }}</td>
-                            <td>{{ $pengembalian->judul }}</td>
                             <td>{{ $pengembalian->id_anggota }}</td>
+                            <td>{{ $pengembalian->anggotas->nama }}</td>
                             <td>{{ $pengembalian->id_buku }}</td>
+                            <td>{{ $pengembalian->bukus->judul }}</td>
                             <td>{{ $pengembalian->tgl_jatuh_tempo }}</td>
                             <td>{{ $pengembalian->tgl_kembali }}</td>
                             <td>{{ $pengembalian->terlambat }}</td>

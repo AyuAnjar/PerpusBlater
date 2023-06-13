@@ -13,9 +13,8 @@ return new class extends Migration
     {
         Schema::create('pengembalians', function (Blueprint $table) {
             $table->id('id_pengembalian',10);
-            $table->string('judul',100);
-            $table->unsignedBigInteger('id_anggota');
-            $table->unsignedBigInteger('id_buku');
+            $table->string('id_anggota');
+            $table->string('id_buku');
             $table->string('tgl_jatuh_tempo');
             $table->string('tgl_kembali');
             $table->string('terlambat',20);

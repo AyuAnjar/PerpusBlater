@@ -161,18 +161,6 @@
                                         @enderror
                                     </div>
 
-                                  <div class="form-group">
-                                    <label class="font-weight-bold">Judul</label>
-                                    <input type="text" class="form-control @error('judul') is-invalid @enderror" name="judul" value="{{ old('judul ', $pengembalian->judul) }}" placeholder="Masukkan Judul">
-                                
-                                    <!-- error message untuk judul -->
-                                    @error('judul')
-                                        <div class="alert alert-danger mt-2">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-
                                 <div class="form-group">
                                     <label class="font-weight-bold">ID Anggota</label>
                                     <input type="text" class="form-control @error('id_anggota') is-invalid @enderror" name="id_anggota" value="{{ old('id_anggota', $pengembalian->id_anggota) }}" placeholder="Masukkan ID Anggota Post">
