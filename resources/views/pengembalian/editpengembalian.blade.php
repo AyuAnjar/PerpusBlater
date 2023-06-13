@@ -161,41 +161,17 @@
                                         @enderror
                                     </div>
 
-                                <div class="form-group">
-                                    <label class="font-weight-bold">ID Anggota</label>
-                                    <input type="text" class="form-control @error('id_anggota') is-invalid @enderror" name="id_anggota" value="{{ old('id_anggota', $pengembalian->id_anggota) }}" placeholder="Masukkan ID Anggota Post">
-                                
-                                    <!-- error message untuk id_anggota -->
-                                    @error('id_anggota')
-                                        <div class="alert alert-danger mt-2">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="font-weight-bold">ID Buku</label>
-                                    <input type="text" class="form-control @error('id_buku') is-invalid @enderror" name="id_buku" value="{{ old('id_buku', $pengembalian->id_buku) }}" placeholder="Masukkan ID Buku Post">
-                                
-                                    <!-- error message untuk id_anggota -->
-                                    @error('id_anggota')
-                                        <div class="alert alert-danger mt-2">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-
-                                <div class="form-group">
-                                  <label class="font-weight-bold">Tanggal Jatuh Tempo</label>
-                                  <input type="date" class="form-control @error('tgl_jatuh_tempo') is-invalid @enderror" name="tgl_jatuh_tempo" value="{{ old('tgl_jatuh_tempo', $pengembalian->tgl_jatuh_tempo) }}" placeholder="Masukkan Tanggal Jatuh Tempo">
-                              
-                                  <!-- error message untuk tgl_jatuh_tempo -->
-                                  @error('tgl_jatuh_tempo')
-                                      <div class="alert alert-danger mt-2">
-                                          {{ $message }}
-                                      </div>
-                                  @enderror
-                              </div>
+                                    <div class="form-group">
+                                      <label class="font-weight-bold">ID Peminjaman</label>
+                                      <input type="text" class="form-control @error('id_peminjaman') is-invalid @enderror" name="id_peminjaman" value="{{ old('id_peminjaman', $pengembalian->id_peminjaman) }}" placeholder="Masukkan ID Anggota Post">
+                                  
+                                      <!-- error message untuk id_anggota -->
+                                      @error('id_anggota')
+                                          <div class="alert alert-danger mt-2">
+                                              {{ $message }}
+                                          </div>
+                                      @enderror
+                                  </div>
 
                               <div class="form-group">
                                 <label class="font-weight-bold">Tanggal Kembali</label>
@@ -208,18 +184,6 @@
                                     </div>
                                 @enderror
                             </div>
-
-                            <div class="form-group">
-                              <label class="font-weight-bold">Terlambat</label>
-                              <input type="text" class="form-control @error('terlambat') is-invalid @enderror" name="terlambat" value="{{ old('terlambat', $pengembalian->terlambat) }}" placeholder="Masukkan Terlambat Pengembalian">
-                          
-                              <!-- error message untuk terlambat -->
-                              @error('terlambat')
-                                  <div class="alert alert-danger mt-2">
-                                      {{ $message }}
-                                  </div>
-                              @enderror
-                          </div>
         
                           <div class="form-group">
                             <label class="font-weight-bold">Denda</label>

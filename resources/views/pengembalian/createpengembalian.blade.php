@@ -160,41 +160,17 @@
                                         @enderror
                                     </div>
 
-                                  <div class="form-group">
-                                    <label class="font-weight-bold">ID Anggota</label>
-                                    <input type="text" class="form-control @error('id_anggota') is-invalid @enderror" name="id_anggota" value="{{ old('id_anggota') }}" placeholder="Masukkan ID Anggota">
-                                
-                                    <!-- error message untuk id_anggota -->
-                                    @error('id_anggota')
-                                        <div class="alert alert-danger mt-2">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-
-                                <div class="form-group">
-                                  <label class="font-weight-bold">ID Buku</label>
-                                  <input type="text" class="form-control @error('id_buku') is-invalid @enderror" name="id_buku" value="{{ old('id_buku') }}" placeholder="Masukkan ID Buku">
-                              
-                                  <!-- error message untuk id_buku -->
-                                  @error('id_buku')
-                                      <div class="alert alert-danger mt-2">
-                                          {{ $message }}
-                                      </div>
-                                  @enderror
-                              </div>
-
-                            <div class="form-group">
-                              <label class="font-weight-bold">Tanggal Jatuh Tempo</label>
-                              <input type="date" class="form-control @error('tgl_jatuh_tempo') is-invalid @enderror" name="tgl_jatuh_tempo" value="{{ old('tgl_jatuh_tempo') }}" placeholder="Masukkan Tanggal Jatuh Tempo">
-                          
-                              <!-- error message untuk stok -->
-                              @error('tgl_jatuh_tempo')
-                                  <div class="alert alert-danger mt-2">
-                                      {{ $message }}
+                                    <div class="form-group">
+                                      <label class="font-weight-bold">ID Peminjaman</label>
+                                      <input type="text" class="form-control @error('id_peminjaman') is-invalid @enderror" name="id_peminjaman" value="{{ old('id_peminjaman') }}" placeholder="Masukkan ID Peminjaman">
+                                  
+                                      <!-- error message untuk id_anggota -->
+                                      @error('id_peminjaman')
+                                          <div class="alert alert-danger mt-2">
+                                              {{ $message }}
+                                          </div>
+                                      @enderror
                                   </div>
-                              @enderror
-                          </div>
 
                           <div class="form-group">
                             <label class="font-weight-bold">Tanggal Kembali</label>
@@ -202,18 +178,6 @@
                         
                             <!-- error message untuk tgl_kembali -->
                             @error('tgl_kembali')
-                                <div class="alert alert-danger mt-2">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-
-                        <div class="form-group">
-                            <label class="font-weight-bold">Terlambat</label>
-                            <input type="text" class="form-control @error('terlambat') is-invalid @enderror" name="terlambat" value="{{ old('terlambat') }}" placeholder="Masukkan Waktu Terlambat">
-                        
-                            <!-- error message untuk terlambat -->
-                            @error('terlambat')
                                 <div class="alert alert-danger mt-2">
                                     {{ $message }}
                                 </div>

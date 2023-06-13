@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Pengembalian extends Model
 {
     use HasFactory;
-    protected $fillable = ['id_pengembalian','id_anggota','id_buku','tgl_jatuh_tempo','tgl_kembali','terlambat','denda'];
+    protected $fillable = ['id_pengembalian','id_peminjaman','tgl_kembali','denda'];
     protected $table = 'pengembalians';
     protected $primaryKey = 'id_pengembalian';
     public $incrementing = false;
@@ -22,5 +22,10 @@ class Pengembalian extends Model
     public function anggotas()
     {
         return $this->belongsTo(Anggota::class, 'id_anggota');
+    }
+
+    public function peminjamans()
+    {
+        return $this->belongsTo(Peminjaman::class, 'id_peminjaman');
     }
 }

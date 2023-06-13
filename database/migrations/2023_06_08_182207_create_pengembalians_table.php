@@ -13,11 +13,8 @@ return new class extends Migration
     {
         Schema::create('pengembalians', function (Blueprint $table) {
             $table->id('id_pengembalian',10);
-            $table->string('id_anggota');
-            $table->string('id_buku');
-            $table->string('tgl_jatuh_tempo');
+            $table->string('id_peminjaman');
             $table->string('tgl_kembali');
-            $table->string('terlambat',20);
             $table->string('denda',20);
             $table->timestamps();
         });

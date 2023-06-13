@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Models\Pengembalian;
 use App\Models\Anggota;
 use App\Models\Buku;
+use App\Models\Peminjaman;
 
 //return type View
 use Illuminate\View\View;
@@ -24,7 +25,7 @@ class PengembalianController extends Controller
     public function index(): View
     {
         //get Pengembalians
-        $pengembalians = Pengembalian::with('bukus','anggotas')->latest()->paginate(5);
+        $pengembalians = Pengembalian::with('peminjamans','bukus','anggotas')->latest()->paginate(5);
 
         //render view with Pengembalians
         return view('pengembalian.pengembalian', compact('pengembalians'));
@@ -51,22 +52,16 @@ class PengembalianController extends Controller
         //validate form
         $this->validate($request, [
             'id_pengembalian'     => 'required|min:3',
-            'id_anggota'   => 'required',
-            'id_buku'   => 'required',
-            'tgl_jatuh_tempo'   => 'required',
+            'id_peminjaman'   => 'required',
             'tgl_kembali'   => 'required',
-            'terlambat'   => 'required',
             'denda'   => 'required',
         ]);
 
         //create post
         Pengembalian::create([
             'id_pengembalian' => $request->id_pengembalian,
-            'id_anggota'   => $request->id_anggota,
-            'id_buku'   => $request->id_buku,
-            'tgl_jatuh_tempo'   => $request->tgl_jatuh_tempo,
+            'id_peminjaman' => $request->id_peminjaman,
             'tgl_kembali'   => $request->tgl_kembali,
-            'terlambat'   => $request->terlambat,
             'denda'   => $request->denda,
         ]);
 
@@ -105,11 +100,8 @@ class PengembalianController extends Controller
         //update
         $pengembalian->update([
             'id_pengembalian' => $request->id_pengembalian,
-            'id_anggota'   => $request->id_anggota,
-            'id_buku'   => $request->id_buku,
-            'tgl_jatuh_tempo'   => $request->tgl_jatuh_tempo,
+            'id_peminjaman' => $request->id_peminjaman,
             'tgl_kembali'   => $request->tgl_kembali,
-            'terlambat'   => $request->terlambat,
             'denda'   => $request->denda,
         ]);
 

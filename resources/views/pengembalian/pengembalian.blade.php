@@ -146,13 +146,11 @@
                   <tr>
                     <th>No</th>
                     <th>ID Pengembalian</th>
-                    <th>ID Anggota</th>
+                    <th>ID Peminjaman</th>
                     <th>Nama Anggota</th>
-                    <th>ID Buku</th>
                     <th>Judul</th>
                     <th>Tanggal Jatuh Tempo</th>
                     <th>Tanggal Kembali</th>
-                    <th>Terlambat</th>
                     <th>Denda</th>
                     <th width="160px">Aksi</th>
                   </tr>
@@ -162,13 +160,11 @@
                         <tr>
                             <th>{{ $loop->iteration }}</th>
                             <td>{{ $pengembalian->id_pengembalian }}</td>
-                            <td>{{ $pengembalian->id_anggota }}</td>
-                            <td>{{ $pengembalian->anggotas->nama }}</td>
-                            <td>{{ $pengembalian->id_buku }}</td>
-                            <td>{{ $pengembalian->bukus->judul }}</td>
-                            <td>{{ $pengembalian->tgl_jatuh_tempo }}</td>
+                            <td>{{ $pengembalian->peminjamans->id_peminjaman }}</td>
+                            <td>{{ $pengembalian->peminjamans->anggotas->nama }}</td>
+                            <td>{{ $pengembalian->peminjamans->bukus->judul }}</td>
+                            <td>{{ $pengembalian->peminjamans->tgl_jatuh_tempo }}</td>
                             <td>{{ $pengembalian->tgl_kembali }}</td>
-                            <td>{{ $pengembalian->terlambat }}</td>
                             <td>{{ $pengembalian->denda }}</td>
                             <td>
                               <form action="{{route('pengembalian.destroy', ['pengembalian' => $pengembalian->id_pengembalian])}}" method="POST">
