@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\KepalabukuController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,3 +54,35 @@ Route::get('/cetak-peminjaman', 'App\http\Controllers\kepalapeminjamanController
 //Route Kepala Pengembalian
 Route::get('/kepalapengembalian', 'App\http\Controllers\KepalapengembalianController@index');
 Route::get('/cetak-pengembalian', 'App\http\Controllers\KepalapengembalianController@cetakPengembalian');
+
+Route::get('/dashboard', function () {
+    if (Auth::user()->role === 'admin') {
+        // Aksi untuk admin
+        return view('dashboard');
+    } elseif (Auth::user()->role === 'anggota') {
+        // Aksi untuk pengguna
+        return view('aPerpus.homeA');
+    } elseif (Auth::user()->role === 'kepala') {
+        // Aksi untuk kepala
+        return view('kepala.dashboard');
+    } else {
+        // Aksi jika peran tidak valid
+        return redirect()->back()->with('error', 'Peran tidak valid');
+    }
+})->middleware(['auth'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+
+
+Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
+    ->name('logout');
+
+
+
+    
+require __DIR__.'/auth.php';

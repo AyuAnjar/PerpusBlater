@@ -54,7 +54,11 @@ https://templatemo.com/tm-581-kind-heart-charity
                     </li>
 
                     <li class="nav-item ms-3">
-                        <a class="nav-link custom-btn custom-border-btn btn" href="/logout">Logout</a>
+                        <form action="{{route('logout')}}" method="post">
+                                @csrf
+                                @method('POST')
+                                <button class="nav-link custom-btn custom-border-btn btn" type="submit">Logout</button>
+                        </form>
                         <!-- Link belum bener -->
                     </li>
                 </ul>

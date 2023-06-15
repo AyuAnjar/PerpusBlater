@@ -130,9 +130,24 @@
                           <p>Pengembalian</p>
                         </a>
                     </li>
+                    
                   </ul>
             </nav>
+            <div>
+                <li class="nav-item ms-3">
+                        <form action="{{route('logout')}}" method="post">
+                                @csrf
+                                @method('POST')
+                                <button class="btn-danger custom-border-btn btn" type="submit">Logout</button>
+                        </form>
+                        <!-- Link belum bener -->
+                    </li>
+                <!-- ./col -->
+              </div>
             <!-- /.sidebar-menu -->
+          </div>
+          <div>
+      
           </div>
           <!-- /.sidebar -->
         </aside>
@@ -213,7 +228,7 @@
                     </div>
                   </div>
                 </div>
-                <!-- ./col -->
+                
               </div>
             </div><!-- /.container-fluid -->
           </section>
